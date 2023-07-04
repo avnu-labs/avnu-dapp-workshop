@@ -5,17 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b39fa32e-8047-4941-8628-2ed19e012566" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/shared/Text/text.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/shared/layout/providers.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/theme/colors.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/theme/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/globals.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/shared/layout/components/base-layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.module.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/next.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vercel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/shared/Text/text.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/shared/text/title.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/shared/layout/providers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/lib/shared/layout/components/providers.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +46,7 @@
       <recent name="$PROJECT_DIR$/styles" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/shared/layout/components" />
       <recent name="$PROJECT_DIR$/styles" />
     </key>
   </component>
@@ -61,7 +58,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1688480889077</updated>
-      <workItem from="1688480890225" duration="1155000" />
+      <workItem from="1688480890225" duration="2069000" />
     </task>
     <servers />
   </component>

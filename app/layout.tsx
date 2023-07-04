@@ -1,26 +1,28 @@
-import '../styles/globals.css'
-import { Inter } from 'next/font/google'
-import {Providers} from "@/lib/shared/layout/providers";
+import "../styles/globals.css";
+import { Nunito } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] })
+import BaseLayout from "@/lib/shared/layout/components/base-layout";
+import { Providers } from "@/lib/shared/layout/components/providers";
+
+const nunito = Nunito({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'Quantum Leap',
-  description: 'TODO - add description',
-}
+  title: "Quantum Leap",
+  description: "TODO - add description",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-      <Providers>
-        {children}
-      </Providers>
+      <body className={nunito.className}>
+        <Providers>
+          <BaseLayout>{children}</BaseLayout>
+        </Providers>
       </body>
     </html>
-  )
+  );
 }

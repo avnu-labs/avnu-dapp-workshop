@@ -1,9 +1,9 @@
-import Text from "@/lib/shared/Text/text";
+import Title from "@/lib/shared/text/title";
 
 export default function Home() {
   return (
     <main>
-      <Text as="h1" fontWeight="bold">Quantum Leap</Text>
+      <Title />
     </main>
-  )
+  );
 }
