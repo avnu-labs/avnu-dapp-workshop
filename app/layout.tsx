@@ -1,8 +1,8 @@
 import "../styles/globals.css";
 import { Nunito } from "next/font/google";
 
-import BaseLayout from "@/lib/shared/layout/components/base-layout";
-import { Providers } from "@/lib/shared/layout/components/providers";
+import BaseLayout from "@/lib/shared/layout/base-layout";
+import { Providers } from "@/lib/shared/layout/providers";
 
 const nunito = Nunito({ subsets: ["latin"] });
 
