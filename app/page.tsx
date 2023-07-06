@@ -22,7 +22,7 @@ export default function Home() {
     watch: true,
   });
 
-  const { data: txData, write } = useContractWrite({
+  const { data: txData, write: mint } = useContractWrite({
     calls: [
       {
         contractAddress: ethAddress,
@@ -33,14 +33,8 @@ export default function Home() {
   });
 
   useEffect(() => {
-    console.log(txData);
     if (txData) setHash(txData.transaction_hash);
   }, [txData]);
-  const handleMint = () => {
-    // For the time call a transfer token
-    // write().then((tx) => setHash(tx.transaction_hash));
-    write();
-  };
   return (
     <main>
       <HStack justify="space-between">
@@ -49,7 +43,7 @@ export default function Home() {
           <Text mt={8} fontWeight="bold" fontSize="4xl" color="grey.700">
             Don’t witness history, become a part of it!
           </Text>
-          <MintButton onMintClick={handleMint} />
+          <MintButton onMintClick={mint} />
           <div>Hash: {hash}</div>
           {isLoading && <div>Loading...</div>}
           {error && <div>Error: {JSON.stringify(error)}</div>}
