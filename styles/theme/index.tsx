@@ -4,6 +4,7 @@ import { extendTheme } from "@chakra-ui/react";
 import colors from "./colors";
 import Button from "./components/button";
 import Link from "./components/link";
+import Modal from "./components/modal";
 
 const config: ThemeConfig = {
   initialColorMode: "light",
@@ -36,6 +37,7 @@ const overrides = {
   components: {
     Button,
     Link,
+    Modal,
   },
 };
 

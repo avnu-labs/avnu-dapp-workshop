@@ -1,9 +1,9 @@
 "use client";
 
-import { Box, Container, Grid, GridItem, Image } from "@chakra-ui/react";
+import { Box, Container, Grid, GridItem } from "@chakra-ui/react";
 import type { FC, ReactNode } from "react";
 
-import Footer from "@/lib/shared/layout/footer";
+import Footer from "@/lib/shared/components/layout/footer";
 
 interface Props {
   children: ReactNode;
@@ -43,7 +43,7 @@ const BaseLayout: FC<Props> = ({ children }) => {
         />
         <Box
           top={10}
-          ledt={10}
+          left={10}
           position="absolute"
           h="400px"
           w="400px"

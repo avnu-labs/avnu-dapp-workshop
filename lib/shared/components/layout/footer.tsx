@@ -1,6 +1,6 @@
 "use client";
 
-import { Text, HStack, Link } from "@chakra-ui/react";
+import { HStack, Link } from "@chakra-ui/react";
 import type { ReactNode } from "react";
 
 function MenuItem({ children }: { children: ReactNode }) {
