@@ -1,14 +1,10 @@
 "use client";
 
-import { Text, HStack } from "@chakra-ui/react";
+import { Text, HStack, Link } from "@chakra-ui/react";
 import type { ReactNode } from "react";
 
 function MenuItem({ children }: { children: ReactNode }) {
-  return (
-    <Text fontSize="4xl" fontWeight="black">
-      {children}
-    </Text>
-  );
+  return <Link>{children}</Link>;
 }
 export default function Footer() {
   return (

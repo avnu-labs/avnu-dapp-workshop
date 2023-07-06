@@ -3,6 +3,7 @@ import { extendTheme } from "@chakra-ui/react";
 
 import colors from "./colors";
 import Button from "./components/button";
+import Link from "./components/link";
 
 const config: ThemeConfig = {
   initialColorMode: "light",
@@ -21,7 +22,7 @@ const overrides = {
         // fontFeatureSettings: "'ss01' on, 'ss02' on, 'cv01' on, 'cv03' on",
         // fontVariant: 'none !important',
         _light: {
-          bg: "white",
+          bg: "#edf0ff",
           color: "black",
         },
         _dark: {
@@ -34,6 +35,7 @@ const overrides = {
   colors,
   components: {
     Button,
+    Link,
   },
 };
 
