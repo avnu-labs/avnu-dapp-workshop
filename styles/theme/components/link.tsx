@@ -2,7 +2,7 @@ import { defineStyle, defineStyleConfig } from "@chakra-ui/react";
 
 const brand = defineStyle({
   fontSize: "4xl",
-  fontWeight: "black",
+  fontWeight: "regular",
   _hover: {
     textDecoration: "none",
   },

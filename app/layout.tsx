@@ -1,6 +1,10 @@
 import "../styles/globals.css";
+import "../styles/old-effect.css";
+import "../styles/glitch.css";
+import "../styles/text-glitch.scss";
 import { Nunito } from "next/font/google";
 
+import Background from "@/lib/shared/components/layout/background";
 import BaseLayout from "@/lib/shared/components/layout/base-layout";
 import { Providers } from "@/lib/shared/components/layout/providers";
 
@@ -22,6 +26,7 @@ export default function RootLayout({
         <Providers>
           <BaseLayout>{children}</BaseLayout>
         </Providers>
+        <Background />
       </body>
     </html>
   );

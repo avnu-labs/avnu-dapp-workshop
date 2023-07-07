@@ -23,7 +23,7 @@ const overrides = {
         // fontFeatureSettings: "'ss01' on, 'ss02' on, 'cv01' on, 'cv03' on",
         // fontVariant: 'none !important',
         _light: {
-          bg: "#edf0ff",
+          bg: "linear-gradient(68.66deg,#e8e2ff 1.3%,#f7f5ff 50%)",
           color: "black",
         },
         _dark: {
