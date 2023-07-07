@@ -5,6 +5,7 @@ import colors from "./colors";
 import Button from "./components/button";
 import Link from "./components/link";
 import Modal from "./components/modal";
+import Tag from "./components/tag";
 
 const config: ThemeConfig = {
   initialColorMode: "light",
@@ -38,6 +39,7 @@ const overrides = {
     Button,
     Link,
     Modal,
+    Tag,
   },
 };
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Container, Grid, GridItem } from "@chakra-ui/react";
+import { Container, Grid, GridItem } from "@chakra-ui/react";
 import type { FC, ReactNode } from "react";
 
 import Footer from "@/lib/shared/components/layout/footer";

@@ -4,4 +4,5 @@ body {
   width: 100%;
   -ms-overflow-style: none;
   scrollbar-width: none; /* Firefox */
+  overflow: hidden;
 }

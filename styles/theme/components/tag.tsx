@@ -1,14 +1,12 @@
 import { defineStyle, defineStyleConfig } from "@chakra-ui/react";
 
 const brand = defineStyle({
-  fontSize: "4xl",
-  fontWeight: "regular",
-  transition: "all .5s",
-  _hover: {
-    textDecoration: "none",
-    opacity: 0.5,
+  container: {
+    transform: "rotate(2deg)",
+    bg: "white",
+    color: "greyDark.100",
+    boxShadow: "md",
   },
-  _light: {},
 });
 export default defineStyleConfig({
   variants: { brand },
