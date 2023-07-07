@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  Box,
-  Flex,
-  Grid,
-  GridItem,
-  Image,
-  Link,
-  VStack,
-} from "@chakra-ui/react";
+import { Flex, Grid, GridItem, Image, Link } from "@chakra-ui/react";
 import NextLink from "next/link";
 
 import Main from "@/lib/shared/components/layout/main";
@@ -71,8 +63,8 @@ export default function Partners() {
       <Main maxW="2xl" title="Partners">
         <Grid w="full" templateColumns="repeat(3, 1fr)" gap={12}>
           {partners.map((partner) => (
-            <GridItem w="100%">
-              <PartnerItem key={partner.alt} {...partner} />
+            <GridItem key={partner.alt} w="100%">
+              <PartnerItem {...partner} />
             </GridItem>
           ))}
         </Grid>

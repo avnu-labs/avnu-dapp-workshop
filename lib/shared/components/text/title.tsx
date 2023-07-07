@@ -1,6 +1,5 @@
 "use client";
 
-import type { TextProps } from "@chakra-ui/react";
 import {
   VStack,
   Text as ChakraText,

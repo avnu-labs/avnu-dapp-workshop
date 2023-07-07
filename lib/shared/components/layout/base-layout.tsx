@@ -1,20 +1,11 @@
 "use client";
 
-import {
-  Box,
-  Container,
-  Flex,
-  Grid,
-  GridItem,
-  Image,
-  VStack,
-} from "@chakra-ui/react";
+import { Container, Grid, GridItem } from "@chakra-ui/react";
 import type { FC, ReactNode } from "react";
 
 import Footer from "@/lib/shared/components/layout/footer";
 import Nft from "@/lib/shared/components/nft/nft";
-import Title from "@/lib/shared/text/title";
-import MintButton from "@/lib/wallet/components/mint-button";
+import Title from "@/lib/shared/components/text/title";
 
 interface Props {
   children: ReactNode;

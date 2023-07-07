@@ -1,7 +1,7 @@
-import type { FlexProps } from "@chakra-ui/react";
+import type { StackProps } from "@chakra-ui/react";
 import { Text, VStack } from "@chakra-ui/react";
 
-interface Props extends FlexProps {
+interface Props extends StackProps {
   title: string;
 }
 export default function Main({ children, title, ...props }: Props) {

@@ -15,10 +15,11 @@ interface Props {
 const ConnectWalletModal: FC<Props> = ({ isOpen, onClose }) => {
   const { available, connect, refresh } = useConnectors();
   useEffect(() => {
+    let interval: NodeJS.Timer;
     if (available.length === 0) {
-      const interval = setInterval(refresh, 0);
-      return () => clearInterval(interval);
+      interval = setInterval(refresh, 0);
     }
+    return () => clearInterval(interval);
   }, [available, refresh]);
   const handleClickConnect = (connector: Connector) => () => {
     connect(connector);

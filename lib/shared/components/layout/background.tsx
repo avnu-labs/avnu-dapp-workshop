@@ -7,10 +7,12 @@ export default function Background() {
     <>
       <Box
         className="content"
-        position="absolute!important"
         top={0}
         zIndex={-1}
         opacity={0.5}
+        sx={{
+          position: "absolute!important",
+        }}
       >
         <Box className="film">
           <Box className="effect">

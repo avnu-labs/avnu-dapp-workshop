@@ -1,4 +1,4 @@
-import { Box, Image, VStack } from "@chakra-ui/react";
+import { Box, Image, Text, VStack } from "@chakra-ui/react";
 import {
   useAccount,
   useContractWrite,
@@ -43,10 +43,12 @@ export default function Nft() {
         <Image h="400px" w="auto" src="/nft.jpeg" alt="Astro" />
       </Box>
       <MintButton onMintClick={mint} />
-      <div>Hash: {hash}</div>
-      {isLoading && <div>Loading...</div>}
-      {error && <div>Error: {JSON.stringify(error)}</div>}
-      {data && <div>Status: {data.status}</div>}
+      <VStack>
+        <Text>Hash: {hash}</Text>
+        {isLoading && <Text>Loading...</Text>}
+        {!!error && <Text>Error: {JSON.stringify(error)}</Text>}
+        {data && <Text>Status: {data.status}</Text>}
+      </VStack>
     </VStack>
   );
 }
