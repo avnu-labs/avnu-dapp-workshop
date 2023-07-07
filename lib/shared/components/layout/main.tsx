@@ -7,9 +7,9 @@ interface Props extends FlexProps {
 export default function Main({ children, title, ...props }: Props) {
   return (
     <VStack
+      align="flex-start"
       spacing={4}
       maxW="lg"
-      mt={8}
       fontWeight="medium"
       fontSize="lg"
       color="greyDark.700"
