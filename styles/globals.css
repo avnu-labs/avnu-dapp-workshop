@@ -1,7 +1,8 @@
 html,
 body {
-  background: #e8e2ff;
+  min-height: 100vh;
   width: 100%;
   -ms-overflow-style: none;
   scrollbar-width: none; /* Firefox */
+  display: flex;
 }

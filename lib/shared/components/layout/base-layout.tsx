@@ -10,7 +10,7 @@ interface Props {
 }
 const BaseLayout: FC<Props> = ({ children }) => {
   return (
-    <Container h="full" maxW="8xl" pt={20}>
+    <Container flexGrow={1} maxW="8xl" pt={20}>
       <Grid
         h="full"
         templateAreas={`"main main"

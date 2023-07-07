@@ -40,18 +40,19 @@ export default function Home() {
       <HStack justify="space-between" align="flex-start">
         <VStack align="flex-start">
           <Title />
-          <Text mt={8} fontWeight="bold" fontSize="2xl" color="greyDark.100">
-            One small step for Starknet, one giant leap for the Ethereum
-            community.
-          </Text>
           <VStack
             spacing={4}
             maxW="lg"
             mt={8}
-            fontWeight="bold"
+            fontWeight="medium"
             fontSize="lg"
             color="greyDark.700"
           >
+            <Text mt={8} fontWeight="bold" fontSize="2xl" color="greyDark.100">
+              One small step for Starknet, one giant leap for the Ethereum
+              community.
+            </Text>
+
             <Text as="p">
               Welcome to Starknet v0.12, a new chapter in our story. With
               &apos;Starknet Ascending&apos;, our unique NFT, we celebrate a big
@@ -66,25 +67,27 @@ export default function Home() {
             </Text>
             <Text as="p">
               In the words of Neil Armstrong, it&apos;s &apos;one small step for
-              Starknet, one giant leap for Ethereum&apos;.  Come, be part of our
+              Starknet, one giant leap for Ethereum&apos;. Come, be part of our
               journey, and let&apos;s write the next chapter of this story
               together.
             </Text>
           </VStack>
+        </VStack>
+        <VStack>
+          <Box
+            overflow="hidden"
+            borderRadius="xl"
+            border="10px solid white"
+            boxShadow="xl"
+          >
+            <Image h="400px" w="auto" src="/nft.jpeg" alt="Astro" />
+          </Box>
           <MintButton onMintClick={mint} />
           <div>Hash: {hash}</div>
           {isLoading && <div>Loading...</div>}
           {error && <div>Error: {JSON.stringify(error)}</div>}
           {data && <div>Status: {data.status}</div>}
         </VStack>
-        <Box
-          overflow="hidden"
-          borderRadius="xl"
-          border="10px solid white"
-          boxShadow="xl"
-        >
-          <Image h="400px" w="auto" src="/nft.jpeg" alt="Astro" />
-        </Box>
       </HStack>
     </main>
   );
