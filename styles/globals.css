@@ -1,8 +1,7 @@
 html,
 body {
-  height: 100%;
+  background: #e8e2ff;
   width: 100%;
   -ms-overflow-style: none;
   scrollbar-width: none; /* Firefox */
-  overflow: hidden;
 }
