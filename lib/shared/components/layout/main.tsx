@@ -9,7 +9,6 @@ export default function Main({ children, title, ...props }: Props) {
     <VStack
       align="flex-start"
       spacing={4}
-      maxW="lg"
       fontWeight="medium"
       fontSize="lg"
       color="greyDark.700"

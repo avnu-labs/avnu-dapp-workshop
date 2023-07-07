@@ -7,7 +7,7 @@ import Main from "@/lib/shared/components/layout/main";
 export default function About() {
   return (
     <main>
-      <Main title="About">
+      <Main maxW="lg" title="About">
         <Text as="p">
           Welcome to Starknet v0.12, a new chapter in our story. With
           &apos;Starknet Ascending&apos;, our unique NFT, we celebrate a big

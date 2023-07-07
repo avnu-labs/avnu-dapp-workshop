@@ -34,9 +34,7 @@ const BaseLayout: FC<Props> = ({ children }) => {
         <GridItem area="header">
           <Title />
         </GridItem>
-        <GridItem area="main">
-          <Flex align="flex-start">{children}</Flex>
-        </GridItem>
+        <GridItem area="main">{children}</GridItem>
         <GridItem area="nft">
           <Nft />
         </GridItem>
