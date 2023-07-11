@@ -1,8 +1,6 @@
 html,
-body {
-  min-height: 100vh;
-  width: 100%;
+body, main {
+  height: 100%;
   -ms-overflow-style: none;
   scrollbar-width: none; /* Firefox */
-  display: flex;
 }

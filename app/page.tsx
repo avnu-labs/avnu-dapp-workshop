@@ -1,11 +1,7 @@
 "use client";
 
-import Main from "@/lib/shared/components/layout/main";
+import { Flex } from "@chakra-ui/react";
 
 export default function Home() {
-  return (
-    <main>
-      <Main title="Don’t witness history, become a part of it!" />
-    </main>
-  );
+  return <Flex>Home</Flex>;
 }
