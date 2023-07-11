@@ -4,6 +4,7 @@ import { Container, Grid, GridItem } from "@chakra-ui/react";
 import type { FC, ReactNode } from "react";
 
 import Footer from "@/lib/shared/components/layout/footer";
+import Header from "@/lib/shared/components/layout/header";
 
 interface Props {
   children: ReactNode;
@@ -20,7 +21,9 @@ const BaseLayout: FC<Props> = ({ children }) => {
           gridTemplateRows="56px 1fr 56px"
           gap="1"
         >
-          <GridItem area="header">header</GridItem>
+          <GridItem area="header">
+            <Header />
+          </GridItem>
           <GridItem area="main">{children}</GridItem>
           <GridItem area="footer">
             <Footer />
