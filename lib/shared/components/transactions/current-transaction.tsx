@@ -1,19 +1,10 @@
 import { Flex, Text } from "@chakra-ui/react";
-import {
-  useTransactionManager,
-  useWaitForTransaction,
-} from "@starknet-react/core";
-import { useMemo } from "react";
 
 export default function CurrentTransaction() {
-  const { hashes } = useTransactionManager();
-  const lastHash = useMemo(() => {
-    return hashes[hashes.length - 1];
-  }, [hashes]);
-  const { data, isLoading } = useWaitForTransaction({
-    hash: lastHash,
-    watch: true,
-  });
+  // TODO get the last transaction hash using useTransactionManager hook
+  // const { hashes } = ...
+  // TODO use useWaitForTransaction hook to get the last transaction hash status
+  // const { data, isLoading } = ...
   return (
     <Flex direction="column">
       <Text>Last transaction status</Text>

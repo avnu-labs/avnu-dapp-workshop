@@ -1,6 +1,5 @@
 import type { BoxProps } from "@chakra-ui/react";
 import { Box, HStack, Skeleton, Text, VStack } from "@chakra-ui/react";
-import { useContractRead } from "@starknet-react/core";
 import type { FC } from "react";
 import { useEffect, useState } from "react";
 import type { Abi } from "starknet";
@@ -11,8 +10,10 @@ import environment from "../../../../environment";
 import MintButton from "@/lib/shared/components/nft/mint-button";
 import type { NftMetadata } from "@/lib/shared/models/nft-metadata";
 
+// Compiled ABI of the AVNUNft contract
 const compiledAvnuNft: Abi = json.parse(JSON.stringify(avnuNft)) as Abi;
 
+// Component to display a label and a value
 function Info({
   label,
   value,
@@ -31,14 +32,13 @@ function Info({
 }
 
 const Nft: FC<BoxProps> = ({ ...props }) => {
-  const { data: tokenUriData } = useContractRead({
-    abi: compiledAvnuNft,
-    address: environment.nftAddress,
-    functionName: "tokenURI",
-    args: [{ low: 1, high: 0 }],
-  });
+  // TODO use the useContractRead hook from starknet-react to get the tokenURI metadata
+  // const { data: tokenUriData } = ...
 
+  // Internal state of the metadata fecthed from the tokenURI
   const [metadata, setMetadata] = useState<NftMetadata | undefined>(undefined);
+
+  // Update the internal state when the tokenURI data changes
   useEffect(() => {
     if (tokenUriData) {
       fetch(
