@@ -14,7 +14,10 @@ import { json } from "starknet";
 import avnuNft from "@/assets/abis/AVNUNft.json";
 import environment from "@/environment";
 
+// Compiled ABI for AVNUNft contract
 const compiledAvnuNft: Abi = json.parse(JSON.stringify(avnuNft)) as Abi;
+
+// Fetching balance of an account
 const Balance = ({
   account,
   mintHash,
@@ -22,16 +25,15 @@ const Balance = ({
   account: AccountInterface;
   mintHash: string | undefined;
 }) => {
+  // Internal state representing the current balance of the account
   const [balance, setBalance] = useState<bigint>(BigInt(0));
-  const { data } = useWaitForTransaction({ hash: mintHash, watch: true });
+  // TODO use useWaitForTransaction hook to wait for the mint transaction to be accepted on L2 -> Use to refresh the balance after mint
+  // const { data } = ...
 
-  const { data: tokenBalanceData, refetch } = useContractRead({
-    abi: compiledAvnuNft,
-    address: environment.nftAddress,
-    functionName: "balanceOf",
-    args: [account.address],
-  });
+  // TODO use useContractRead hook to fetch the balance of the account
+  // const { data: tokenBalanceData, refetch } = ...
 
+  // Set the internal state balance when the tokenBalanceData is fetched
   useEffect(() => {
     if (tokenBalanceData) {
       // eslint-disable-next-line
@@ -40,6 +42,7 @@ const Balance = ({
     }
   }, [tokenBalanceData]);
 
+  // Refresh the balance when the mint transaction is accepted on L2
   useEffect(() => {
     if (data && data.status === "ACCEPTED_ON_L2") refetch();
   }, [refetch, data]);
@@ -50,40 +53,19 @@ const Balance = ({
 export default function MintButton({ ...props }: ButtonProps) {
   const { account } = useAccount();
   const { addTransaction } = useTransactionManager();
-  const { data: txDataMint, write: writeMint } = useContractWrite({
-    calls: [
-      {
-        contractAddress: environment.nftAddress,
-        entrypoint: "mintPublic",
-        calldata: [account?.address || "0x0"],
-      },
-    ],
-  });
 
-  const { data: txDataMintAndTransfer, write: writeMintAndTransfer } =
-    useContractWrite({
-      calls: [
-        {
-          contractAddress: environment.nftAddress,
-          entrypoint: "mintPublic",
-          calldata: [account?.address || "0x0"],
-        },
-        {
-          contractAddress: environment.ethAddress,
-          entrypoint: "transfer",
-          calldata: [
-            "0x0312479874C73a1801164B7aA59a3f4af96478dF170BE27F25E683EDF39E91Cb",
-            1,
-            0,
-          ],
-        },
-      ],
-    });
+  // TODO use useContractWrite hook to call the mint function of the AVNUNft contract
+  // const { data: txDataMint, write: writeMint } = ...
 
+  // TODO use useContractWrite hook to call the mint function of the AVNUNft contract && transfer some eth to the contract (multicall)
+  // const { data: txDataMintAndTransfer, write: writeMintAndTransfer } = ...
+
+  // Add transaction to the manager once transaction is submitted
   useEffect(() => {
     if (txDataMint) addTransaction({ hash: txDataMint.transaction_hash });
   }, [txDataMint, addTransaction]);
 
+  // Add transaction to the manager once transaction is submitted
   useEffect(() => {
     if (txDataMintAndTransfer)
       addTransaction({ hash: txDataMintAndTransfer.transaction_hash });

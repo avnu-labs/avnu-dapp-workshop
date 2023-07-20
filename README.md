@@ -94,49 +94,39 @@ Here are the interesting files tree you'll have to update/use during this worksh
     1) See the file tree
     2) Contract addresses are located in [environment](/environment.ts)
     3) (use of [ChakraUI](https://chakra-ui.com/getting-started) components library)
-    4) Uncomment part by part the workshop in [page.tsx](app/page.tsx)
+    4) Uncomment part by part the workshop
 2) Fetching block infos
-    1) Update the [starknet providers](lib/shared/components/layout/provider.tsx) to connect to the default Starknet provider by using [Starknet-react](https://github.com/apibara/starknet-react)
+    1) Update the [starknet providers](lib/shared/components/layout/provider.tsx) to connect to the default Starknet Goerli provider by using [Starknet-react](https://github.com/apibara/starknet-react)
     2) Update the [footer component](lib/shared/components/layout/footer.tsx) to fetch & display the current block infos
     3) (The UI part is already done here)
 3) Wallet connect
     1) Look at the [Connect button component](lib/wallet/components/connect-button.tsx) & [Connect wallet modal component](lib/wallet/components/connect-wallet-modal.tsx)
-    2) Update it to ask user wallet connection by using [Starknet-react](https://github.com/apibara/starknet-react) or [Get starknet by argent](https://github.com/argentlabs/argent-x) if you wnt to use argent web wallet.
+    2) Update it to ask user wallet connection by using [Starknet-react](https://github.com/apibara/starknet-react) or [Get starknet by argent](https://github.com/argentlabs/argent-x) if you want to use argent web wallet.
     3) You should be able to connect with Braavos or ArgentX, and see your current address on the UI
-4) Your first transaction ----------- ici -------------
-    1) Start by taking a look at the [Contract Provider model](src/context/ContractProvider/model.ts)
-    2) You can now update the [RegisterWhitelist component](src/components/wallet/RegisterWhitelist.tsx) to
-        1) Fetch the total free slots currently available
-        2) Fetch the current whitelisted status of the connected account
-        3) Register to the whitelist if there is free slots & the connected account is not currently whitelisted
-5) Multi-call
-    1) Look at the [MultiMint component](src/components/wallet/MultiMint.tsx)
+4) Managing ERC-721
+    1) Start by taking a look at the [NFT component](lib/shared/components/nft/nft.tsx) & [Mint button component](lib/shared/components/nft/mint-button.tsx)
+    2) You can now update the [NFT component](lib/shared/components/nft/nft.tsx) to
+        1) Fetch & display the name, description and image of the NFT by fetching metadata
+        2) Fetch the balance of the connected account
+        3) Mint the NFT by using the mint button
+           1) Simple call, only mint
+           2) Multi-call, mint and donate
+5) Managing transactions ---------------------------
+    1) Look at the [Current transaction component](lib/shared/components/transactions/current-transaction.tsx) & the [Transactions list component](lib/shared/components/transactions/transactions-list.tsx)
     2) Here you'll have to
-        1) Fetch balances of arfBTC & arfETH when needed
-        2) Mint both arfBTC & arfETH in 1 TX using the multicall
-    3) (You can also make a 'register to whitelist + mint token' in 1 TX as well)
-6) Deploy your own Access Controller
+        1) Watch the last transaction registered by the app & display the current status in real time
+        2) Display all registered transactions by the app
+6) Deploy your own ERC-721 contract
     1) You can put aside IDE for the time & open your terminal
-    2) clone the [access-controller](https://github.com/419Labs/access-controller-contracts) repo
-        1) ``> git clone git@github.com:419Labs/access-controller-contracts.git``
-    3) Use nile to compile & deploy the contracts
-        1) ``> nile compile``
-        2) ``> nile deploy AccessController --alias my_access_controller [...args] --network=goerli``
-        3) Wait until the contract is deployed
-            1) You can check the status of the TX by calling [get_transaction](https://docs.starknet.io/docs/CLI/commands#starknet-get_transaction) on the starknet cli
-    4) Once it's ok, you can test it by calling *freeSlotsCount* on the deployed contract
-        1) With Nile CLI
+    2) You can use the OpenZeppelin [ERC-721 contract](https://github.com/OpenZeppelin/cairo-contracts/tree/main/src/openzeppelin/token/erc721)
+    3) Use [Starkli](https://github.com/xJonathanLEI/starkli) to compile, declare & deploy the contracts
+       1) Wait until the contract is deployed
+    4) Once it's ok, you can test it by calling *mint* on the deployed contract to verify
+        1) With the CLI
         2) With the [voyager](https://goerli.voyager.online/)
-    5) You can now replace the ACCESS_CONTROLLER_CONTRACT_ADDRESS in [the contract constants](src/contracts/addresses.ts) to use your own
-7) Add your feature
-    1) In this part you'll add your own feature from A to Z
-    2) Start by choosing the feature you want to implement
-        1) Remove from whitelist, Get a list of all whitelisted addresses, ...
-    3) Implement the feature on the [AccessController_base contract](https://github.com/419Labs/access-controller-contracts/blob/main/contracts/libraries/AccessController_base.cairo) & Add the corresponding @view or @external interface on the [AccessController contract](https://github.com/419Labs/access-controller-contracts/blob/main/contracts/AccessController.cairo)
-    4) Compile & Deploy your new contract
-        1) Get the new abi.json & update the [current one](src/contracts/abis/AccessController.json)
-    5) Implement the new feature on the UI
-        1) By create a new component in */src/components/wallet* & add it in the [index](src/pages/index.tsx)
+   5) Declare & upload your metadata.json to IPFS (or other if you prefer)
+   6) Set the tokenURI of your contract to the IPFS link
+   7) You can now replace the nftAddress in [the environment file](environment.ts) to use your own
 
 ## Contract addresses
 
@@ -166,6 +156,8 @@ https://www.starknetjs.com/
 https://www.npmjs.com/package/@argent/get-starknet
 
 https://github.com/OpenZeppelin/cairo-contracts
+
+https://github.com/xJonathanLEI/starkli
 
 
 ## License
