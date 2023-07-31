@@ -33,7 +33,7 @@
     "react-dom": "18.2.0",
     "sass": "^1.63.6",
     "starknet": "^5.14.1",
-    "starknetid.js": "^1.5.0",
+    "starknetid.js": "^1.5.3",
     "typescript": "5.1.6"
   }
 }
